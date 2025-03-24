@@ -3,27 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name</title>
+  <title>Laven Srivastava</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Welcome to My Personal Website!</h1>
+    <h1>Laven Srivastava</h1>
+    <p>Researcher | Developer | Innovator</p>
+    <nav>
+      <a href="https://linkedin.com/in/laven-srivastava">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=7Fef4WkAAAAJ&hl=en">Google Scholar</a>
+      <a href="https://github.com/lav7n">GitHub</a>
+    </nav>
   </header>
-  <section>
-    <h2>About Me</h2>
-    <p>Hi! I'm [Your Name], a passionate developer.</p>
+
+  <section id="papers">
+    <h2>My Research Papers</h2>
+    <div class="paper-list"></div>
   </section>
-  <section>
+
+  <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li><a href="https://github.com/yourusername/project1">Project 1</a></li>
-      <li><a href="https://github.com/yourusername/project2">Project 2</a></li>
-      <li><a href="https://github.com/yourusername/project3">Project 3</a></li>
+      <li><a href="https://github.com/lav7n/project1">Project 1</a></li>
+      <li><a href="https://github.com/lav7n/project2">Project 2</a></li>
+      <li><a href="https://github.com/lav7n/project3">Project 3</a></li>
     </ul>
   </section>
+
   <footer>
-    <p>Contact me at: your.email@example.com</p>
+    <p>Contact me at: laven.srivastava@example.com</p>
   </footer>
+
+  <script>
+    async function fetchPapers() {
+      const response = await fetch('https://export.arxiv.org/api/query?search_query=au:Laven_Srivastava&start=0&max_results=10');
+      const xml = await response.text();
+      const parser = new DOMParser();
+      const data = parser.parseFromString(xml, 'text/xml');
+      const entries = data.getElementsByTagName('entry');
+      const paperList = document.querySelector('.paper-list');
+
+      Array.from(entries).forEach(entry => {
+        const title = entry.getElementsByTagName('title')[0].textContent;
+        const link = entry.getElementsByTagName('link')[0].getAttribute('href');
+        const summary = entry.getElementsByTagName('summary')[0]?.textContent || 'No summary available';
+
+        const paperCard = document.createElement('div');
+        paperCard.className = 'paper-card';
+        paperCard.innerHTML = `
+          <h3>${title}</h3>
+          <p>${summary.slice(0, 200)}...</p>
+          <a href="${link}" target="_blank">Read More</a>
+        `;
+        paperList.appendChild(paperCard);
+      });
+    }
+
+    fetchPapers();
+  </script>
 </body>
 </html>
