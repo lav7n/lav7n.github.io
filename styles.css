@@ -1,20 +1,28 @@
+/* Base styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f9;
   color: #333;
 }
 
+/* Header */
 header {
-  background-color: #222;
+  background: linear-gradient(135deg, #4b79a1, #283e51);
   color: white;
+  padding: 2rem 1rem;
   text-align: center;
-  padding: 1.5rem;
 }
 
-nav {
-  margin-top: 0.5rem;
+.header-container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-container p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 nav a {
@@ -22,35 +30,83 @@ nav a {
   text-decoration: none;
   margin: 0 15px;
   font-size: 1.1rem;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #ffdd57;
 }
 
-section {
-  padding: 2rem;
-  text-align: center;
+/* About Section */
+#about {
+  background: #fff;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h2 {
-  font-size: 2rem;
+.about-container {
+  display: flex;
+  max-width: 1000px;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #4b79a1;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Section Titles */
+section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 1rem;
+}
+
+/* Card Styles */
 .card {
-  display: inline-block;
   background: white;
   border-radius: 10px;
   overflow: hidden;
   width: 300px;
-  margin: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 .card img {
@@ -64,30 +120,32 @@ h2 {
 }
 
 .card-content h3 {
-  margin: 0;
+  margin-top: 0;
   font-size: 1.4rem;
 }
 
 .card-content p {
   font-size: 1rem;
   color: #555;
+  margin: 0.5rem 0 1rem;
 }
 
 .card-content a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #0077cc;
   text-decoration: none;
-  font-weight: bold;
+  color: #0077cc;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
 .card-content a:hover {
-  text-decoration: underline;
+  color: #005fa3;
 }
 
+/* Footer */
 footer {
-  text-align: center;
-  padding: 1.5rem;
   background-color: #222;
   color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
 }
