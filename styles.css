@@ -1,78 +1,64 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f9;
-  color: #333;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laven Srivastava</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Laven Srivastava</h1>
+    <p>Researcher | Developer | Innovator</p>
+    <nav>
+      <a href="https://linkedin.com/in/laven-srivastava">LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=7Fef4WkAAAAJ&hl=en">Google Scholar</a>
+      <a href="https://github.com/lav7n">GitHub</a>
+    </nav>
+  </header>
 
-header {
-  background-color: #007bff;
-  color: white;
-  text-align: center;
-  padding: 2rem 0;
-}
+  <section id="papers">
+    <h2>My Research Papers</h2>
+    <div class="card">
+      <img src="paper1.jpg" alt="Paper 1 Image">
+      <div class="card-content">
+        <h3>Paper Title 1</h3>
+        <p>Brief description of Paper 1. This paper covers XYZ topic.</p>
+        <a href="https://arxiv.org/abs/1234.56789">Read More</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="paper2.jpg" alt="Paper 2 Image">
+      <div class="card-content">
+        <h3>Paper Title 2</h3>
+        <p>Brief description of Paper 2. Discussing ABC concepts.</p>
+        <a href="https://arxiv.org/abs/9876.54321">Read More</a>
+      </div>
+    </div>
+  </section>
 
-header h1 {
-  margin: 0;
-  font-size: 3rem;
-}
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <img src="project1.jpg" alt="Project 1 Image">
+      <div class="card-content">
+        <h3>Project 1</h3>
+        <p>An exciting project exploring modern technologies.</p>
+        <a href="https://github.com/lav7n/project1">View Project</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="project2.jpg" alt="Project 2 Image">
+      <div class="card-content">
+        <h3>Project 2</h3>
+        <p>Innovative solutions using machine learning models.</p>
+        <a href="https://github.com/lav7n/project2">View Project</a>
+      </div>
+    </div>
+  </section>
 
-header p {
-  font-size: 1.2rem;
-}
-
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-section {
-  padding: 2rem;
-  margin: 1rem auto;
-  max-width: 900px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-h2 {
-  color: #007bff;
-}
-
-.paper-card {
-  background-color: #fff;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.paper-card h3 {
-  margin-top: 0;
-}
-
-.paper-card a {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.paper-card a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
+  <footer>
+    <p>Contact me at: laven.srivastava@example.com</p>
+  </footer>
+</body>
+</html>
