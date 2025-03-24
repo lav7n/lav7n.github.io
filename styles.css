@@ -3,26 +3,28 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  background: linear-gradient(135deg, #f4f4f9, #e2e8f0);
   color: #333;
 }
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #4b79a1, #283e51);
+  background: linear-gradient(135deg, #283e51, #4b79a1);
   color: white;
   padding: 2rem 1rem;
   text-align: center;
 }
 
 .header-container h1 {
-  font-size: 2.8rem;
+  font-family: 'Roboto Slab', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
-.header-container p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+.tagline {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
 }
 
 nav a {
@@ -39,24 +41,22 @@ nav a:hover {
 
 /* About Section */
 #about {
-  background: #fff;
+  background-color: #fff;
   padding: 3rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .about-container {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  max-width: 1000px;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
 .profile-pic {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid #4b79a1;
@@ -65,23 +65,26 @@ nav a:hover {
 .about-text {
   flex: 1;
   text-align: left;
+  font-family: 'Poppins', sans-serif;
 }
 
 .about-text h2 {
-  font-size: 2.2rem;
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 
 .about-text p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   line-height: 1.6;
 }
 
 /* Section Titles */
 section h2 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   margin-bottom: 1.5rem;
   text-align: center;
+  font-family: 'Roboto Slab', serif;
 }
 
 /* Cards Container */
@@ -89,43 +92,44 @@ section h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   padding: 0 1rem;
 }
 
 /* Card Styles */
 .card {
-  background: white;
-  border-radius: 10px;
+  background: #fff;
+  border-radius: 12px;
   overflow: hidden;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
 }
 
 .card-content {
-  padding: 1rem;
+  padding: 1.2rem;
 }
 
 .card-content h3 {
-  margin-top: 0;
-  font-size: 1.4rem;
+  margin: 0 0 0.5rem;
+  font-size: 1.8rem;
+  font-family: 'Roboto Slab', serif;
 }
 
 .card-content p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #555;
   margin: 0.5rem 0 1rem;
 }
@@ -143,9 +147,9 @@ section h2 {
 
 /* Footer */
 footer {
-  background-color: #222;
+  background-color: #283e51;
   color: white;
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.8rem;
   margin-top: 2rem;
 }
