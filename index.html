@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laven Srivastava</title>
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto+Slab:700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
     <div class="header-container">
       <h1>Laven Srivastava</h1>
-      <p>Researcher | Developer | Student</p>
+      <p class="tagline">Researcher | Developer | Student</p>
       <nav>
         <a href="https://linkedin.com/in/laven-srivastava" target="_blank">LinkedIn</a>
         <a href="https://scholar.google.com/citations?user=7Fef4WkAAAAJ&hl=en" target="_blank">Google Scholar</a>
@@ -25,14 +25,31 @@
       <img src="profile.jpg" alt="Laven Srivastava" class="profile-pic">
       <div class="about-text">
         <h2>About Me</h2>
-        <p>Hello! I'm Laven Srivastava, a passionate researcher, developer, and student who thrives on innovation and exploring cutting-edge technologies. My work spans across diverse projects and research areas, and I am continuously exploring new ideas to push the boundaries of science and technology.</p>
+        <p>Hello! I'm Laven Srivastava – a passionate researcher, developer, and student with a drive for innovation. I explore cutting-edge technologies and contribute to impactful research. My projects and publications reflect my commitment to pushing the boundaries in science and technology.</p>
       </div>
     </div>
   </section>
 
   <section id="papers">
     <h2>My Research Papers</h2>
-    <div class="cards-container paper-list"></div>
+    <div class="cards-container">
+      <div class="card">
+        <img src="paper1.jpg" alt="Paper 1">
+        <div class="card-content">
+          <h3>Efficient Federated Learning with Trust</h3>
+          <p>A novel approach to secure federated learning addressing trust issues in decentralized systems.</p>
+          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7Fef4WkAAAAJ&citation_for_view=7Fef4WkAAAAJ:d1gkVwhDpl0C" target="_blank">Read More</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="paper2.jpg" alt="All Papers">
+        <div class="card-content">
+          <h3>View All My Papers</h3>
+          <p>Explore the full list of my research contributions on Google Scholar.</p>
+          <a href="https://scholar.google.com/citations?user=7Fef4WkAAAAJ&hl=en" target="_blank">Visit Google Scholar</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="projects">
@@ -50,7 +67,7 @@
         <img src="project2.jpg" alt="SnapSort">
         <div class="card-content">
           <h3>SnapSort</h3>
-          <p>Innovative approach to sorting algorithms and systems design.</p>
+          <p>Innovative approaches to sorting algorithms and systems design.</p>
           <a href="https://github.com/lav7n/SnapSort" target="_blank">View Project</a>
         </div>
       </div>
@@ -68,36 +85,5 @@
   <footer>
     <p>Contact me at: lavensri@gmail.com</p>
   </footer>
-
-  <script>
-    async function fetchPapers() {
-      const response = await fetch('https://export.arxiv.org/api/query?search_query=au:Laven_Srivastava&start=0&max_results=10');
-      const xml = await response.text();
-      const parser = new DOMParser();
-      const data = parser.parseFromString(xml, 'text/xml');
-      const entries = data.getElementsByTagName('entry');
-      const paperList = document.querySelector('.paper-list');
-
-      Array.from(entries).forEach(entry => {
-        const title = entry.getElementsByTagName('title')[0].textContent.trim();
-        const link = entry.getElementsByTagName('link')[0].getAttribute('href');
-        const summary = entry.getElementsByTagName('summary')[0]?.textContent.trim() || 'No summary available';
-
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-          <img src="paper_placeholder.jpg" alt="${title}">
-          <div class="card-content">
-            <h3>${title}</h3>
-            <p>${summary.slice(0, 200)}...</p>
-            <a href="${link}" target="_blank">Read More</a>
-          </div>
-        `;
-        paperList.appendChild(card);
-      });
-    }
-
-    fetchPapers();
-  </script>
 </body>
 </html>
