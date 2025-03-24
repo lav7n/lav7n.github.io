@@ -4,31 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Laven Srivastava</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Laven Srivastava</h1>
-    <p>Researcher | Developer | Student </p>
-    <nav>
-      <a href="https://linkedin.com/in/laven-srivastava">LinkedIn</a>
-      <a href="https://scholar.google.com/citations?user=7Fef4WkAAAAJ&hl=en">Google Scholar</a>
-      <a href="https://github.com/lav7n">GitHub</a>
-    </nav>
+    <div class="header-container">
+      <h1>Laven Srivastava</h1>
+      <p>Researcher | Developer | Student</p>
+      <nav>
+        <a href="https://linkedin.com/in/laven-srivastava" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=7Fef4WkAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a href="https://github.com/lav7n" target="_blank">GitHub</a>
+      </nav>
+    </div>
   </header>
+
+  <section id="about">
+    <div class="about-container">
+      <img src="profile.jpg" alt="Laven Srivastava" class="profile-pic">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Hello! I'm Laven Srivastava, a passionate researcher, developer, and student who thrives on innovation and exploring cutting-edge technologies. My work spans across diverse projects and research areas, and I am continuously exploring new ideas to push the boundaries of science and technology.</p>
+      </div>
+    </div>
+  </section>
 
   <section id="papers">
     <h2>My Research Papers</h2>
-    <div class="paper-list"></div>
+    <div class="cards-container paper-list"></div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <ul>
-      <li><a href="https://github.com/lav7n/FL-Trust">FLTrust</a></li>
-      <li><a href="https://github.com/lav7n/SnapSort">SnapSort</a></li>
-      <li><a href="https://github.com/MRM-Research/ReFuSeg">ReFuSeg</a></li>
-    </ul>
+    <div class="cards-container">
+      <div class="card">
+        <img src="project1.jpg" alt="FLTrust">
+        <div class="card-content">
+          <h3>FLTrust</h3>
+          <p>A project focusing on secure federated learning systems.</p>
+          <a href="https://github.com/lav7n/FL-Trust" target="_blank">View Project</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="project2.jpg" alt="SnapSort">
+        <div class="card-content">
+          <h3>SnapSort</h3>
+          <p>Innovative approach to sorting algorithms and systems design.</p>
+          <a href="https://github.com/lav7n/SnapSort" target="_blank">View Project</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="project3.jpg" alt="ReFuSeg">
+        <div class="card-content">
+          <h3>ReFuSeg</h3>
+          <p>Advancing research in segmentation and image processing.</p>
+          <a href="https://github.com/MRM-Research/ReFuSeg" target="_blank">View Project</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
@@ -45,18 +79,21 @@
       const paperList = document.querySelector('.paper-list');
 
       Array.from(entries).forEach(entry => {
-        const title = entry.getElementsByTagName('title')[0].textContent;
+        const title = entry.getElementsByTagName('title')[0].textContent.trim();
         const link = entry.getElementsByTagName('link')[0].getAttribute('href');
-        const summary = entry.getElementsByTagName('summary')[0]?.textContent || 'No summary available';
+        const summary = entry.getElementsByTagName('summary')[0]?.textContent.trim() || 'No summary available';
 
-        const paperCard = document.createElement('div');
-        paperCard.className = 'paper-card';
-        paperCard.innerHTML = `
-          <h3>${title}</h3>
-          <p>${summary.slice(0, 200)}...</p>
-          <a href="${link}" target="_blank">Read More</a>
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="paper_placeholder.jpg" alt="${title}">
+          <div class="card-content">
+            <h3>${title}</h3>
+            <p>${summary.slice(0, 200)}...</p>
+            <a href="${link}" target="_blank">Read More</a>
+          </div>
         `;
-        paperList.appendChild(paperCard);
+        paperList.appendChild(card);
       });
     }
 
